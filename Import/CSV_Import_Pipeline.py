@@ -1,16 +1,14 @@
 import pandas as pd
 import mysql.connector
 from mysql.connector import Error
+from config import DD_CONFIG
 
 # ─────────────────────────────────────────
 # 1. DATABASE CONNECTION
 # ─────────────────────────────────────────
 def get_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="your_password",
-        database="Backtesting_Engine"
+        **DD_CONFIG
     )
 
 # ─────────────────────────────────────────

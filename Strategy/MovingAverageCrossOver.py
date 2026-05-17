@@ -1,3 +1,4 @@
+import pandas as pd
 def ma_crossover(df, fast_period=10, slow_period=50):
     df['fast_ma'] = df['close'].rolling(window=fast_period).mean()
     df['slow_ma'] = df['close'].rolling(window=slow_period).mean()
