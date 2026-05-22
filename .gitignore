@@ -1,4 +1,28 @@
+# Virtual Environment
 ENV/
+
+# Secret credentials
 .env
+
+# Python cache
 __pycache__/
+*/__pycache__/
+*/*/__pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Data files — don't push raw CSVs
+*.csv
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db

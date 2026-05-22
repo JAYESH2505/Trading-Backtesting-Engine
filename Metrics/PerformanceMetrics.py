@@ -58,12 +58,12 @@ def calculate_metrics(paired):
 
     gross_profit  = sum(t['pnl'] for t in paired if t['pnl'] > 0)
     gross_loss    = sum(t['pnl'] for t in paired if t['pnl'] < 0) * -1
-    profit_factor = (gross_profit / gross_loss) if gross_loss > 0 else float('inf')
+    profit_factor = (gross_profit / gross_loss) if gross_loss > 0 else 0.0
 
     # Risk-reward: average win / average loss
     avg_win  = (gross_profit / winning_trades) if winning_trades > 0 else 0
     avg_loss = (gross_loss  / losing_trades)   if losing_trades  > 0 else 0
-    risk_reward = (avg_win / avg_loss) if avg_loss > 0 else float('inf')
+    risk_reward = (avg_win / avg_loss) if avg_loss > 0 else 0.0
 
     return {
         'total_trades':    total_trades,

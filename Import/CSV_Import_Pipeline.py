@@ -1,14 +1,14 @@
 import pandas as pd
 import mysql.connector
 from mysql.connector import Error
-from config import DD_CONFIG
+from config import DB_CONFIG
 
 # ─────────────────────────────────────────
 # 1. DATABASE CONNECTION
 # ─────────────────────────────────────────
 def get_connection():
     return mysql.connector.connect(
-        **DD_CONFIG
+        **DB_CONFIG
     )
 
 # ─────────────────────────────────────────
